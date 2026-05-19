@@ -36,6 +36,7 @@ public class Program {
         people.add(person10);
 
         List<Person> matchingPeople = findMatchPeople(scan);
+        double averageAge = getAverageAge();
 
 
     }
@@ -52,5 +53,15 @@ public class Program {
             }
         }
         return matchingPeople;
+    }
+
+    private static double getAverageAge() {
+        double totalAge = 0;
+        for (Person person : people) {
+            totalAge += person.getAge();
+        }
+        double averageAge = totalAge / people.size();
+        System.out.println("Average age of people: " + averageAge);
+        return averageAge;
     }
 }
