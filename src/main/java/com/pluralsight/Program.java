@@ -37,6 +37,7 @@ public class Program {
 
         List<Person> matchingPeople = findMatchPeople(scan);
         double averageAge = getAverageAge();
+        Person oldestPerson = getOldestPerson();
 
 
     }
@@ -63,5 +64,18 @@ public class Program {
         double averageAge = totalAge / people.size();
         System.out.println("Average age of people: " + averageAge);
         return averageAge;
+    }
+
+    private static Person getOldestPerson() {
+        Person oldestPerson = null;
+        for (Person person : people) {
+            if (oldestPerson == null) {
+                oldestPerson = person;
+            }
+            if (oldestPerson.getAge() < person.getAge()) {
+                oldestPerson = person;
+            }
+        }
+        return oldestPerson;
     }
 }
