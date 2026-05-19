@@ -8,11 +8,11 @@ import java.util.Scanner;
 
 public class Program {
 
+    private static List<Person> people = new ArrayList<>();
+
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
-
-        List<Person> people = new ArrayList<>();
 
         Person person1 = new Person("Liam", "Carter", 22);
         Person person2 = new Person("Sophia", "Nguyen", 31);
@@ -35,8 +35,13 @@ public class Program {
         people.add(person9);
         people.add(person10);
 
-        List<Person> matchingPeople = new ArrayList<>();
+        List<Person> matchingPeople = findMatchPeople(scan);
 
+
+    }
+
+    private static List<Person> findMatchPeople(Scanner scan) {
+        List<Person> matchingPeople = new ArrayList<>();
         System.out.print("Enter the name your looking for: ");
         String userInput = scan.nextLine();
 
@@ -46,6 +51,6 @@ public class Program {
                 System.out.println(person);
             }
         }
-
+        return matchingPeople;
     }
 }
