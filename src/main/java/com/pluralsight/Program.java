@@ -77,6 +77,7 @@ public class Program {
                 oldestPerson = person;
             }
         }
+        System.out.println("Oldest person: " + oldestPerson);
         return oldestPerson;
     }
 
@@ -90,6 +91,7 @@ public class Program {
                 youngestPerson = person;
             }
         }
+        System.out.println("Youngest person: " + youngestPerson);
         return youngestPerson;
     }
 }
