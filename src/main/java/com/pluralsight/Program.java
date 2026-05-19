@@ -38,6 +38,7 @@ public class Program {
         List<Person> matchingPeople = findMatchPeople(scan);
         double averageAge = getAverageAge();
         Person oldestPerson = getOldestPerson();
+        Person youngestPerson = getYoungestPerson();
 
 
     }
@@ -77,5 +78,18 @@ public class Program {
             }
         }
         return oldestPerson;
+    }
+
+    private static Person getYoungestPerson() {
+        Person youngestPerson = null;
+        for (Person person : people) {
+            if (youngestPerson == null) {
+                youngestPerson = person;
+            }
+            if (youngestPerson.getAge() > person.getAge()) {
+                youngestPerson = person;
+            }
+        }
+        return youngestPerson;
     }
 }
